@@ -1,0 +1,73 @@
+
+Time and space complexity
+
+The getPrimesInRange function has a time complexity of O((end - start + 1) * sqrt(end)) 
+as it iterates through the specified range, checking for primality. 
+The calculatePrimes function introduces a negligible O(n) time complexity,
+ calculating averages for checks and finds. The space complexity is dominated by the primes array,
+ resulting in O(m) space, where m is the number of prime numbers in the range.
+
+
+
+
+ Metrics of the function:
+
+//example:Get prime numbers in the range 10 to 50
+Find out following  metrics about the performance of the function.
+const startRange = 10;
+const endRange = 50;
+
+// Time taken for all instances
+const startTimeAllInstances = performance.now();
+const primesInRange = getPrimesInRange(startRange, endRange);
+const endTimeAllInstances = performance.now();
+const totalTimeAllInstances = endTimeAllInstances - startTimeAllInstances;
+console.log("Time taken for all instances:", totalTimeAllInstances, "ms");
+
+// Time taken for each number checked
+primesInRange.forEach((num) => {
+    const startTimeCheck = performance.now();
+    const isPrime = getPrimesInRange(num, num);
+    const endTimeCheck = performance.now();
+    console.log(Time taken to check if ${num} is prime:, endTimeCheck - startTimeCheck, "ms");
+});
+
+// Time taken for each prime number found
+primesInRange.forEach((num) => {
+    const startTimeFind = performance.now();
+    getPrimesInRange(num, num);
+    const endTimeFind = performance.now();
+    console.log(Time taken to find ${num} as prime:, endTimeFind - startTimeFind, "ms");
+});
+To measure the performance metrics of the function, you can utilize the performance.now() method to calculate the time taken for different operations. Here's how you can find the specified metrics
+
+
+// Average time for both checks
+const averageTimeChecks = (totalTimeAllInstances / primesInRange.length).toFixed(4);
+console.log("Average time for checks:", averageTimeChecks, "ms");
+
+
+Wireframe Layout:
+
+Header:
+
+Place a title like "Prime Number Finder" at the top-center of the page.
+Input Section:
+
+Label: "Start Range" with an input box next to it.
+Label: "End Range" with an input box next to it.
+"Calculate" button to trigger the calculation.
+Result Section:
+
+Display the prime numbers between the given range.
+Use a heading like "Prime Numbers" followed by the list of prime numbers.
+Additionally, show a "Details" button next to the list.
+Details Popup:
+
+When the "Details" button is clicked, a modal or popup appears.
+Two tabs: "Prime Numbers" and "Table."
+Prime Numbers Tab:
+Display the prime numbers in a list.
+Table Tab:
+Display a table with two columns: "Number" and "Is Prime?"
+Each row should represent a number within the given range along with its primality status.

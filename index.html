@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Numbers Performance</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Prime Numbers Performance</h1>
+
+    <label for="start">Start Range:</label>
+    <input type="number" id="start" placeholder="Enter start range" />
+
+    <label for="end">End Range:</label>
+    <input type="number" id="end" placeholder="Enter end range" />
+
+    <button onclick="calculatePrimes()">Calculate Primes</button>
+
+    <div id="result"></div>
+
+    <div class="popup" id="detailsPopup">
+      <div class="popup-content">
+        <button onclick="closePopup()">Close</button>
+        <div id="detailsTable"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
